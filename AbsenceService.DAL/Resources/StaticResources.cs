@@ -5,6 +5,6 @@ namespace AbsenceService.DAL.Resources
 {
     public static class StaticResources
     {
-        public static string ConnectionString { get; } = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
+        public static string ConnectionString => "Server=(localdb)\\ProjectModels;Database=absencesdb;Trusted_Connection=True;";
     }
 }

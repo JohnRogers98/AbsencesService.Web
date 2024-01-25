@@ -11,7 +11,7 @@ namespace AbsenceService.DAL.Repositories
         {
             string sqlExpression = "select * from employees";
             var employees = new List<EmployeeModel>();
-
+            
             using SqlConnection connection = new SqlConnection(StaticResources.ConnectionString);
             await connection.OpenAsync();
 
