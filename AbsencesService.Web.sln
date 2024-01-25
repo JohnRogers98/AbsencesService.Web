@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbsencesService.Web", "Abse
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbsenceService.DAL", "AbsenceService.DAL\AbsenceService.DAL.csproj", "{3B0D0186-67CA-40AB-B9D9-3AB0AB7697C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{4D8178AE-0186-4BC2-90F1-C02308B4EF49}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbsencesService.Domain", "AbsencesService.Domain\AbsencesService.Domain.csproj", "{DC51BF9D-BEE2-494A-B6A1-241309F2D74D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbsenceService.BLL", "AbsenceService.BLL\AbsenceService.BLL.csproj", "{5844BFF8-ADD7-433D-99D5-D9A43D9346FD}"
@@ -27,10 +25,6 @@ Global
 		{3B0D0186-67CA-40AB-B9D9-3AB0AB7697C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B0D0186-67CA-40AB-B9D9-3AB0AB7697C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B0D0186-67CA-40AB-B9D9-3AB0AB7697C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D8178AE-0186-4BC2-90F1-C02308B4EF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D8178AE-0186-4BC2-90F1-C02308B4EF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D8178AE-0186-4BC2-90F1-C02308B4EF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D8178AE-0186-4BC2-90F1-C02308B4EF49}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC51BF9D-BEE2-494A-B6A1-241309F2D74D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC51BF9D-BEE2-494A-B6A1-241309F2D74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC51BF9D-BEE2-494A-B6A1-241309F2D74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
