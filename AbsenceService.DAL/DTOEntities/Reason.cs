@@ -1,6 +1,6 @@
 ﻿namespace AbsenceService.DAL.DTOEntities
 {
-    public enum AbsenceReason
+    public enum Reason
     {
         Vacation,
         SickLeave,

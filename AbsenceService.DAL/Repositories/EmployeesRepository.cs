@@ -1,4 +1,4 @@
-﻿using AbsencesService.Domain.Repositories;
+﻿
 using Microsoft.Data.SqlClient;
 
 namespace AbsenceService.DAL.Repositories
@@ -7,10 +7,10 @@ namespace AbsenceService.DAL.Repositories
     {
         #region Actions 
 
-        public async Task<IEnumerable<Employee>> GetEmployeesAsync()
+        public async Task<IEnumerable<EmployeeModel>> GetEmployeesAsync()
         {
             string sqlExpression = "select * from employees";
-            var employees = new List<Employee>();
+            var employees = new List<EmployeeModel>();
 
             using SqlConnection connection = new SqlConnection(StaticResources.ConnectionString);
             await connection.OpenAsync();
@@ -22,11 +22,11 @@ namespace AbsenceService.DAL.Repositories
             {
                 while (await reader.ReadAsync())
                 {
-                    var employee = new Employee
+                    var employee = new EmployeeModel
                     {
                         Id = (int)reader["id"],
-                        Last_Name = (string)reader["last_name"],
-                        First_Name = (string)reader["first_name"]
+                        LastName = (string)reader["last_name"],
+                        FirstName = (string)reader["first_name"]
                     };
 
                     employees.Add(employee);
