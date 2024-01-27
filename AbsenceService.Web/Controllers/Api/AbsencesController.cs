@@ -52,8 +52,10 @@ namespace AbsenceService.Web.Controllers.Api
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteAbsence(DeleteAbsenceRequest request)
+        public async Task<IActionResult> DeleteAbsence(int id)
         {
+            var request = new DeleteAbsenceRequest { Id = id };
+
             var deleteAbsenceModel = _mapper.Map<DeleteAbsenceModel>(request);
 
             await _absencesService.DeleteAnsenceAsync(deleteAbsenceModel);

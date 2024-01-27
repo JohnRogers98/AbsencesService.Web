@@ -8,7 +8,8 @@ namespace AbsenceService.Web.Mapper
     {
         public RequestsMappingProfile()
         {
-            CreateMap<CreateAbsenceRequest, CreateAbsenceModel>();
+            CreateMap<CreateAbsenceRequest, CreateAbsenceModel>()
+                 .ForMember(dest => dest.Employee, opt => opt.MapFrom(src => new EmployeeModel {Id = src.EmployeeId }));
             CreateMap<UpdateAbsenceRequest, UpdateAbsenceModel>();
             CreateMap<DeleteAbsenceRequest, DeleteAbsenceModel>();
         }

@@ -6,7 +6,7 @@ namespace AbsenceService.Web.Models.Requests
     public record class CreateAbsenceRequest
     {
         [Required]
-        public EmployeeModel Employee { get; init; }
+        public int EmployeeId { get; init; }
         [Required]
         public AbsenceReason Reason { get; init; }
         [Required]

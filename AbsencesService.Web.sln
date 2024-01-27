@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbsencesService.Domain", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbsenceService.BLL", "AbsenceService.BLL\AbsenceService.BLL.csproj", "{5844BFF8-ADD7-433D-99D5-D9A43D9346FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbsenceService.Web", "AbsenceService.Web\AbsenceService.Web.csproj", "{9943ECF4-7C1E-4E46-885E-356A8FBE13C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbsenceService.Web", "AbsenceService.Web\AbsenceService.Web.csproj", "{9943ECF4-7C1E-4E46-885E-356A8FBE13C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbsenceService.Client", "AbsenceService.Client\AbsenceService.Client.csproj", "{131B4050-02A0-4B24-8EE2-FAD79188740B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9943ECF4-7C1E-4E46-885E-356A8FBE13C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9943ECF4-7C1E-4E46-885E-356A8FBE13C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9943ECF4-7C1E-4E46-885E-356A8FBE13C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{131B4050-02A0-4B24-8EE2-FAD79188740B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{131B4050-02A0-4B24-8EE2-FAD79188740B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{131B4050-02A0-4B24-8EE2-FAD79188740B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{131B4050-02A0-4B24-8EE2-FAD79188740B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

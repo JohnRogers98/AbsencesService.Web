@@ -1,0 +1,132 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Главная</h1>
+
+<button type="button" id="btn_addAbsenceModal" class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#modal_addAbsence">Добавить отсутствие</button>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Идентификатор</th>
+            <th>Сотрудник</th>
+            <th>Причина отсутствия</th>
+            <th>Дат начала</th>
+            <th>Продолжительность(раб.дней)</th>
+            <th>Учтено при оплате</th>
+            <th>Комментарий</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody id="table_absences">
+    </tbody>
+</table>
+
+<!-- Add Modal -->
+<div id="modal_addAbsence" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Добавить отсутствие</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="form_addAbsence">
+                    <div class="input-group mb-3">
+                        <label for="absenceEmployee" class="input-group-text">Сотрудник</label>
+                        <select id="absenceEmployee" class="form-select">
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="absenceReason" class="input-group-text">Причина</label>
+                        <select id="absenceReason" class="form-select">
+                            <option value="0">Отпуск</option>
+                            <option value="1">Больничный</option>
+                            <option value="2">Прогул</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Дата начала</span>
+                        <input id="absenceStartDate" type="date" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Продолжительность(дней)</span>
+                        <input id="absenceDuration" type="number" class="form-control" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="absenceDiscounted" class="input-group-text">Учтено при оплате ?</label>
+                        <div class="input-group-text">
+                            <input id="absenceDiscounted" class="form-check-input mt-0" type="checkbox" checked>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="absenceDescription" class="input-group-text">Комментарий</label>
+                        <textarea id="absenceDescription" class="form-control" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="submit" id="btn_addAbsence" form="form_addAbsence" onclick="AddAbsence()" class="btn btn-primary">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Update Modal -->
+<div id="modal_updateAbsence" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Редактировать отсутствие</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="form_updateAbsence">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Id</span>
+                        <input id="upd_absenceId" class="form-control" disabled>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="upd_absenceEmployee" class="input-group-text">Сотрудник</label>
+                        <input id="upd_absenceEmployee" class="form-control" disabled>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="upd_absenceReason" class="input-group-text">Причина</label>
+                        <select id="upd_absenceReason" class="form-select">
+                            <option value="0">Отпуск</option>
+                            <option value="1">Больничный</option>
+                            <option value="2">Прогул</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Дата начала</span>
+                        <input id="upd_absenceStartDate" type="date" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Продолжительность(дней)</span>
+                        <input id="upd_absenceDuration" type="number" class="form-control" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="upd_absenceDiscounted" class="input-group-text">Учтено при оплате ?</label>
+                        <div class="input-group-text">
+                            <input id="upd_absenceDiscounted" class="form-check-input mt-0" type="checkbox">
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="upd_absenceDescription" class="input-group-text">Комментарий</label>
+                        <textarea id="upd_absenceDescription" class="form-control" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="submit" id="btn_updateAbsence" form="form_updateAbsence" onclick="UpdateAbsence()" class="btn btn-primary">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
